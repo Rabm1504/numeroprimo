@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var stopNumber = prompt("¿Este es un número primo?");
+        var arrayOfPrimes = [];
+        var arePrime = 0;
+        var primeCounterArray = [];
+        var notPrime = 0;
+        for (actualNumber = 0; actualNumber <= stopNumber; actualNumber++) {
+            arrayOfPrimes.push(actualNumber);
+            for (indexPosition = 0; indexPosition <= arrayOfPrimes.length; indexPosition++) {
+                if (actualNumber % indexPosition === 0 && actualNumber !== 0) {
+                    primeCounterArray.push(1);
+                }
+            }
+            if (primeCounterArray.length > 2) {
+                notPrime++;
+                primeCounterArray = [];
+            }
+        }
+        alert("Sí, es primo: " + (stopNumber - notPrime));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
